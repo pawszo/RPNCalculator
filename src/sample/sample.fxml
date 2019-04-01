@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.46" maxHeight="500.0" maxWidth="438.0" minHeight="290.0" minWidth="438.0" orientation="VERTICAL" prefHeight="290.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="436.0">
+         <children>
+            <TextArea fx:id="screen" editable="false" layoutX="18.0" layoutY="19.0" onMouseClicked="#toggleNRootFocused" prefHeight="94.0" prefWidth="400.0" wrapText="true" />
+         </children></AnchorPane>
+    <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="436.0" prefHeight="161.0" prefWidth="436.0">
+         <children>
+            <Button fx:id="seven" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="7" />
+            <Button fx:id="zero" layoutX="83.0" layoutY="120.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="0" />
+            <Button fx:id="two" cacheShape="false" centerShape="false" layoutX="83.0" layoutY="86.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" scaleShape="false" text="2" />
+            <Button fx:id="five" layoutX="83.0" layoutY="50.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="5" />
+            <Button fx:id="eight" layoutX="83.0" layoutY="14.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="8" />
+            <Button fx:id="divide" layoutX="290.0" layoutY="86.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="/" />
+            <Button fx:id="one" layoutX="15.0" layoutY="86.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="1" />
+            <Button fx:id="point" layoutX="15.0" layoutY="120.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="," />
+            <Button fx:id="four" layoutX="15.0" layoutY="50.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="4" />
+            <Button fx:id="percent" layoutX="152.0" layoutY="120.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="\%" />
+            <Button fx:id="three" layoutX="152.0" layoutY="86.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="3" textAlignment="JUSTIFY" />
+            <Button fx:id="six" layoutX="152.0" layoutY="50.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="6" />
+            <Button fx:id="nine" layoutX="152.0" layoutY="14.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="9" />
+            <Button fx:id="leftBracket" layoutX="221.0" layoutY="14.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="(" />
+            <Button fx:id="add" layoutX="221.0" layoutY="50.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="+" />
+            <Button fx:id="multiply" layoutX="221.0" layoutY="86.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="*" />
+            <Button fx:id="power" layoutX="221.0" layoutY="120.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="^" />
+            <Button fx:id="radical" layoutX="320.0" layoutY="120.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="32.0" text="√" />
+            <Button fx:id="subtract" layoutX="290.0" layoutY="50.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="-" />
+            <Button fx:id="rightBracket" layoutX="290.0" layoutY="14.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text=")" />
+            <Button fx:id="backspace" layoutX="359.0" layoutY="14.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="⌫" />
+            <Button fx:id="cancel" layoutX="359.0" layoutY="50.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="C" />
+            <Button fx:id="equals" layoutX="359.0" layoutY="120.0" mnemonicParsing="false" onAction="#funcButton" prefHeight="16.0" prefWidth="62.0" text="=" />
+            <Button fx:id="minus" layoutX="359.0" layoutY="86.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="+-" />
+            <TextField fx:id="NthRoot" layoutX="290.0" layoutY="120.0" onMouseClicked="#toggleNRootFocused" prefHeight="26.0" prefWidth="32.0">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </TextField>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
