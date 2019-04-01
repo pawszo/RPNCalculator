@@ -22,6 +22,7 @@ public class RPNutils {
         String currentElement;
         while (sc.hasNext()) {
             currentElement = sc.next();
+            System.out.println(currentElement);
             if (isNumeric(currentElement)) {
                 rpn += currentElement;
 

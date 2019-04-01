@@ -51,10 +51,11 @@ public class Controller {
         setTips();
         NthRoot.setPromptText("n");
     }
+
     @FXML
-    private void toggleNRootFocused () {
-        if(NthRoot.getScene().getFocusOwner().equals(NthRoot)) NRootFocused = true;
-        if(NthRoot.getScene().getFocusOwner().equals(screen)) NRootFocused = false;
+    private void toggleNRootFocused() {
+        if (NthRoot.getScene().getFocusOwner().equals(NthRoot)) NRootFocused = true;
+        if (NthRoot.getScene().getFocusOwner().equals(screen)) NRootFocused = false;
     }
 
     @FXML
@@ -72,7 +73,7 @@ public class Controller {
             if (e.getSource() == zero) NthRoot.setText(NthRoot.getText() + "0");
             if (e.getSource() == minus) {
                 if (NthRoot.getText().equals("")) {
-                    NthRoot.setText("- ");
+                    NthRoot.setText("-");
                 } else {
 
                     char[] chars = NthRoot.getText().toCharArray();
@@ -93,15 +94,8 @@ public class Controller {
                 } else {
                     char[] chars = NthRoot.getText().toCharArray();
                     String equasion = "";
-                    if (chars[chars.length - 1] == ' ') {
-                        for (int i = 0; i < chars.length - 3; i++) {
-                            equasion += chars[i];
-                        }
-                    } else {
-                        for (int i = 0; i < chars.length - 1; i++) {
-                            equasion += chars[i];
-                        }
-
+                    for (int i = 0; i < chars.length - 1; i++) {
+                        equasion += chars[i];
                     }
                     NthRoot.setText(equasion);
                 }
@@ -119,7 +113,7 @@ public class Controller {
             if (e.getSource() == zero) screen.setText(screen.getText() + "0");
             if (e.getSource() == minus) {
                 if (screen.getText().equals("")) {
-                    screen.setText("- ");
+                    screen.setText("-");
                 } else {
 
                     char[] chars = screen.getText().toCharArray();
@@ -140,15 +134,8 @@ public class Controller {
                 } else {
                     char[] chars = screen.getText().toCharArray();
                     String equasion = "";
-                    if (chars[chars.length - 1] == ' ') {
-                        for (int i = 0; i < chars.length - 3; i++) {
-                            equasion += chars[i];
-                        }
-                    } else {
-                        for (int i = 0; i < chars.length - 1; i++) {
-                            equasion += chars[i];
-                        }
-
+                    for (int i = 0; i < chars.length - 1; i++) {
+                        equasion += chars[i];
                     }
                     screen.setText(equasion);
                 }
@@ -160,23 +147,23 @@ public class Controller {
     private void printToScreen(ActionEvent e) {
 
 
-            if (e.getSource() == add) screen.setText(screen.getText() + " + ");
-            if (e.getSource() == subtract) screen.setText(screen.getText() + " - ");
-            if (e.getSource() == multiply) screen.setText(screen.getText() + " * ");
-            if (e.getSource() == divide) screen.setText(screen.getText() + " / ");
-            if (e.getSource() == point) screen.setText(screen.getText() + ".");
-            if (e.getSource() == leftBracket) screen.setText(screen.getText() + " ( ");
-            if (e.getSource() == rightBracket) screen.setText(screen.getText() + " ) ");
-            if (e.getSource() == power) screen.setText(screen.getText() + " ^ ");
-            if (e.getSource() == radical) {
-                screen.setText(screen.getText() + " ^ ( 1 / " + NthRoot.getText() + " ) ");
-                NthRoot.setText("");
-                NRootFocused = false;
-            }
-            if (e.getSource() == percent) screen.setText(screen.getText() + " % ");
-            if (e.getSource() == cancel) screen.setText("");
-
+        if (e.getSource() == add) screen.setText(screen.getText() + "+");
+        if (e.getSource() == subtract) screen.setText(screen.getText() + "-");
+        if (e.getSource() == multiply) screen.setText(screen.getText() + "*");
+        if (e.getSource() == divide) screen.setText(screen.getText() + "/");
+        if (e.getSource() == point) screen.setText(screen.getText() + ".");
+        if (e.getSource() == leftBracket) screen.setText(screen.getText() + "(");
+        if (e.getSource() == rightBracket) screen.setText(screen.getText() + ")");
+        if (e.getSource() == power) screen.setText(screen.getText() + "^");
+        if (e.getSource() == radical) {
+            screen.setText(screen.getText() + "^(1/" + NthRoot.getText() + ")");
+            NthRoot.setText("");
+            NRootFocused = false;
         }
+        if (e.getSource() == percent) screen.setText(screen.getText() + "%");
+        if (e.getSource() == cancel) screen.setText("");
+
+    }
 
 
     @FXML
