@@ -4,6 +4,9 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -11,8 +14,28 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="436.0">
          <children>
-            <TextArea fx:id="screen" editable="false" layoutX="18.0" layoutY="19.0" onMouseClicked="#toggleNRootFocused" prefHeight="94.0" prefWidth="400.0" wrapText="true" />
-         </children></AnchorPane>
+            <TextArea fx:id="screen" editable="false" layoutX="18.0" layoutY="19.0" onMouseClicked="#toggleNRootFocused" prefHeight="94.0" prefWidth="400.0" wrapText="true">
+               <effect>
+                  <Lighting diffuseConstant="2.0">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#ff9769" />
+                     </light>
+                  </Lighting>
+               </effect></TextArea>
+         </children>
+         <effect>
+            <Lighting diffuseConstant="1.52">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#dcebd4" />
+               </light>
+            </Lighting>
+         </effect></AnchorPane>
     <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="436.0" prefHeight="161.0" prefWidth="436.0">
          <children>
             <Button fx:id="seven" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="7" />
@@ -44,6 +67,26 @@
                   <Font size="9.0" />
                </font>
             </TextField>
-         </children></AnchorPane>
+         </children>
+         <effect>
+            <Lighting diffuseConstant="1.4">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#e1f2e4" />
+               </light>
+            </Lighting>
+         </effect></AnchorPane>
   </items>
+   <effect>
+      <Lighting diffuseConstant="2.0" specularConstant="0.43" specularExponent="16.67" surfaceScale="2.93">
+         <bumpInput>
+            <Shadow />
+         </bumpInput>
+         <light>
+            <Light.Distant color="#cee4d7c4" elevation="49.29" />
+         </light>
+      </Lighting>
+   </effect>
 </SplitPane>

@@ -193,7 +193,11 @@ public class Controller {
         @FXML
         private void funcButton (ActionEvent e){
 
-            if (e.getSource() == equals) System.out.println(RPNutils.convertToRPN(screen.getText()));
+            if (e.getSource() == equals) {
+            //    System.out.println(RPNutils.convertToRPN(screen.getText()));
+                double result = RPNutils.evaluate( RPNutils.convertToRPN(screen.getText()) );
+                screen.setText("" + result);
+                    }
             if (e.getSource() == point) screen.setText(screen.getText() + ".");
         }
 
