@@ -164,8 +164,10 @@ public class Controller {
             char[] chars = screen.getText().toCharArray();
             if (chars[chars.length - 1] != ' ') {
                 String equasion = "";
-                for (char c:chars) {equasion += c;}
-                equasion+= " ";
+                for (char c : chars) {
+                    equasion += c;
+                }
+                equasion += " ";
                 screen.setText(equasion);
             }
 
@@ -173,44 +175,49 @@ public class Controller {
 
 
         if (e.getSource() == add) screen.setText(screen.getText() + "+ ");
-            if (e.getSource() == subtract) screen.setText(screen.getText() + "- ");
-            if (e.getSource() == multiply) screen.setText(screen.getText() + "* ");
-            if (e.getSource() == divide) screen.setText(screen.getText() + "/ ");
-            if (e.getSource() == leftBracket) screen.setText(screen.getText() + "( ");
-            if (e.getSource() == rightBracket) screen.setText(screen.getText() + ") ");
-            if (e.getSource() == power) screen.setText(screen.getText() + "^ ");
-            if (e.getSource() == radical) {
-                screen.setText(screen.getText() + "^ ( 1 / " + NthRoot.getText() + " ) ");
-                NthRoot.setText("");
-                NRootFocused = false;
-            }
-            if (e.getSource() == percent) screen.setText(screen.getText() + "% ");
-            if (e.getSource() == cancel) screen.setText("");
-
+        if (e.getSource() == subtract) screen.setText(screen.getText() + "- ");
+        if (e.getSource() == multiply) screen.setText(screen.getText() + "* ");
+        if (e.getSource() == divide) screen.setText(screen.getText() + "/ ");
+        if (e.getSource() == leftBracket) screen.setText(screen.getText() + "( ");
+        if (e.getSource() == rightBracket) screen.setText(screen.getText() + ") ");
+        if (e.getSource() == power) screen.setText(screen.getText() + "^ ");
+        if (e.getSource() == radical) {
+            screen.setText(screen.getText() + "^ ( 1 / " + NthRoot.getText() + " ) ");
+            NthRoot.setText("");
+            NRootFocused = false;
         }
-
-
-        @FXML
-        private void funcButton (ActionEvent e){
-
-            if (e.getSource() == equals) {
-            //    System.out.println(RPNutils.convertToRPN(screen.getText()));
-                double result = RPNutils.evaluate( RPNutils.convertToRPN(screen.getText()) );
-                screen.setText("" + result);
-                    }
-            if (e.getSource() == point) screen.setText(screen.getText() + ".");
-        }
-
-        public TextArea getScreen () {
-            return screen;
-        }
-
-        @FXML
-        private void setTips () {
-            minus.setTooltip(new Tooltip("Use minus before the number"));
-            power.setTooltip(new Tooltip("power; e.g. 3^2 = 9"));
-            radical.setTooltip(new Tooltip("radical; enter the root number in the main display, then click on the field to the left to focus, enter the factor and press the button."));
-        }
-
+        if (e.getSource() == percent) screen.setText(screen.getText() + "% ");
+        if (e.getSource() == cancel) screen.setText("");
 
     }
+
+
+    @FXML
+    private void funcButton(ActionEvent e) {
+        try {
+            if (e.getSource() == equals) {
+                //    System.out.println(RPNutils.convertToRPN(screen.getText()));
+                double result = RPNutils.evaluate(RPNutils.convertToRPN(screen.getText()));
+                screen.setText("" + result);
+            }
+            if (e.getSource() == point) screen.setText(screen.getText() + ".");
+        } catch (RuntimeException re) {
+            screen.setText("INCORRECT INPUT FORMAT");
+        }
+    }
+
+
+
+    public TextArea getScreen() {
+        return screen;
+    }
+
+    @FXML
+    private void setTips() {
+        minus.setTooltip(new Tooltip("Use minus before the number"));
+        power.setTooltip(new Tooltip("power; e.g. 3^2 = 9"));
+        radical.setTooltip(new Tooltip("radical; enter the root number in the main display, then click on the field to the left to focus, enter the factor and press the button."));
+    }
+
+
+}
