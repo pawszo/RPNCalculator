@@ -22,7 +22,7 @@
             <Button fx:id="eight" layoutX="83.0" layoutY="14.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="8" />
             <Button fx:id="divide" layoutX="290.0" layoutY="86.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="/" />
             <Button fx:id="one" layoutX="15.0" layoutY="86.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="1" />
-            <Button fx:id="point" layoutX="15.0" layoutY="120.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="," />
+            <Button fx:id="point" layoutX="15.0" layoutY="120.0" mnemonicParsing="false" onAction="#funcButton" prefHeight="26.0" prefWidth="62.0" text="," />
             <Button fx:id="four" layoutX="15.0" layoutY="50.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="4" />
             <Button fx:id="percent" layoutX="152.0" layoutY="120.0" mnemonicParsing="false" onAction="#printToScreen" prefHeight="26.0" prefWidth="62.0" text="\%" />
             <Button fx:id="three" layoutX="152.0" layoutY="86.0" mnemonicParsing="false" onAction="#printNumberToScreen" prefHeight="26.0" prefWidth="62.0" text="3" textAlignment="JUSTIFY" />

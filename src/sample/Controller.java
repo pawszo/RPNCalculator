@@ -51,10 +51,11 @@ public class Controller {
         setTips();
         NthRoot.setPromptText("n");
     }
+
     @FXML
-    private void toggleNRootFocused () {
-        if(NthRoot.getScene().getFocusOwner().equals(NthRoot)) NRootFocused = true;
-        if(NthRoot.getScene().getFocusOwner().equals(screen)) NRootFocused = false;
+    private void toggleNRootFocused() {
+        if (NthRoot.getScene().getFocusOwner().equals(NthRoot)) NRootFocused = true;
+        if (NthRoot.getScene().getFocusOwner().equals(screen)) NRootFocused = false;
     }
 
     @FXML
@@ -158,43 +159,54 @@ public class Controller {
 
     @FXML
     private void printToScreen(ActionEvent e) {
+        if (screen.getText().equals("")) {
+        } else {
+            char[] chars = screen.getText().toCharArray();
+            if (chars[chars.length - 1] != ' ') {
+                String equasion = "";
+                for (char c:chars) {equasion += c;}
+                equasion+= " ";
+                screen.setText(equasion);
+            }
+
+        }
 
 
-            if (e.getSource() == add) screen.setText(screen.getText() + " + ");
-            if (e.getSource() == subtract) screen.setText(screen.getText() + " - ");
-            if (e.getSource() == multiply) screen.setText(screen.getText() + " * ");
-            if (e.getSource() == divide) screen.setText(screen.getText() + " / ");
-            if (e.getSource() == point) screen.setText(screen.getText() + ".");
-            if (e.getSource() == leftBracket) screen.setText(screen.getText() + " ( ");
-            if (e.getSource() == rightBracket) screen.setText(screen.getText() + " ) ");
-            if (e.getSource() == power) screen.setText(screen.getText() + " ^ ");
+        if (e.getSource() == add) screen.setText(screen.getText() + "+ ");
+            if (e.getSource() == subtract) screen.setText(screen.getText() + "- ");
+            if (e.getSource() == multiply) screen.setText(screen.getText() + "* ");
+            if (e.getSource() == divide) screen.setText(screen.getText() + "/ ");
+            if (e.getSource() == leftBracket) screen.setText(screen.getText() + "( ");
+            if (e.getSource() == rightBracket) screen.setText(screen.getText() + ") ");
+            if (e.getSource() == power) screen.setText(screen.getText() + "^ ");
             if (e.getSource() == radical) {
-                screen.setText(screen.getText() + " ^ ( 1 / " + NthRoot.getText() + " ) ");
+                screen.setText(screen.getText() + "^ ( 1 / " + NthRoot.getText() + " ) ");
                 NthRoot.setText("");
                 NRootFocused = false;
             }
-            if (e.getSource() == percent) screen.setText(screen.getText() + " % ");
+            if (e.getSource() == percent) screen.setText(screen.getText() + "% ");
             if (e.getSource() == cancel) screen.setText("");
 
         }
 
 
-    @FXML
-    private void funcButton(ActionEvent e) {
+        @FXML
+        private void funcButton (ActionEvent e){
 
-        if (e.getSource() == equals) System.out.println(RPNutils.convertToRPN(screen.getText()));
+            if (e.getSource() == equals) System.out.println(RPNutils.convertToRPN(screen.getText()));
+            if (e.getSource() == point) screen.setText(screen.getText() + ".");
+        }
+
+        public TextArea getScreen () {
+            return screen;
+        }
+
+        @FXML
+        private void setTips () {
+            minus.setTooltip(new Tooltip("Use minus before the number"));
+            power.setTooltip(new Tooltip("power; e.g. 3^2 = 9"));
+            radical.setTooltip(new Tooltip("radical; enter the root number in the main display, then click on the field to the left to focus, enter the factor and press the button."));
+        }
+
+
     }
-
-    public TextArea getScreen() {
-        return screen;
-    }
-
-    @FXML
-    private void setTips() {
-        minus.setTooltip(new Tooltip("Use minus before the number"));
-        power.setTooltip(new Tooltip("power; e.g. 3^2 = 9"));
-        radical.setTooltip(new Tooltip("radical; enter the root number in the main display, then click on the field to the left to focus, enter the factor and press the button."));
-    }
-
-
-}
