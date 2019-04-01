@@ -140,7 +140,10 @@ public class Controller {
             }
             if (e.getSource() == backspace) {
                 if (screen.getText().equals("")) {
-                } else {
+                } else if (screen.getText().equals("INCORRECT INPUT FORMAT")) {
+                    screen.setText("");
+                }
+                else {
                     char[] chars = screen.getText().toCharArray();
                     String equasion = "";
                     if (chars[chars.length - 1] == ' ') {
