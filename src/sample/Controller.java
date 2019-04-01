@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
 import sample.utils.RPNutils;
 
 import javax.swing.*;
@@ -50,6 +51,7 @@ public class Controller {
     public void initialize() {
         setTips();
         NthRoot.setPromptText("n");
+        screen.setStyle("-fx-font-alignment: center");
     }
 
     @FXML

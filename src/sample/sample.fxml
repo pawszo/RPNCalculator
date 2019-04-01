@@ -24,7 +24,10 @@
                         <Light.Distant color="#ff9769" />
                      </light>
                   </Lighting>
-               </effect></TextArea>
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font></TextArea>
          </children>
          <effect>
             <Lighting diffuseConstant="1.52">
